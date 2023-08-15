@@ -1,0 +1,63 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+}
+.box{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-top: 100px;
+    background-size: cover;
+    background-image: url(https://avatars.mds.yandex.net/i?id=da79c7228d82bb60489118ca0d31fb283fdb442b-9231415-images-thumbs&n=13);
+    width: 600px;
+    height: 500px;
+    background-repeat: no-repeat;
+    perspective: 1500px;
+    transition: background-image 1s ease;
+}
+.box:active{
+    background-image: url(https://img-new.cgtrader.com/items/305498/1a6c1a0d10/human-skeleton-rigged-3d-model-low-poly-animated-rigged-max-obj-3ds-fbx-c4d-lwo-lw-lws.jpg);
+}
+
+.child{
+  position: relative;
+  width: 50%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.388);
+  border: 2px solid #fff;
+  transition: transform 1s ease;
+}
+.child::after{
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 50px;
+    background-color: #000;
+    content: "";
+}
+.child-1{
+    transform-origin: left center;
+}
+
+.child-1::after{
+    right: 1px;
+    top: 200px;
+}
+
+.child-2{
+    transform-origin: right center;
+}
+.child-2::after{
+    left: 1px;
+    top: 200px;
+}
+
+.box:hover .child-1{
+    transform: rotateY(-180deg);
+}
+
+.box:hover .child-2{
+    transform: rotateY(180deg);
+}
